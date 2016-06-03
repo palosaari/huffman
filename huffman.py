@@ -199,7 +199,7 @@ def decode(f):
             marker += 1
         elif (marker == 0):
             key = re.findall(r'(\d{1,}$)', line)[0]
-            val = re.findall(r'(^.* )', line)[0]
+            val = re.findall(r'(^.{3,6} )', line)[0]
             '''
             Ugly hack! Backslash is special character that must be escaped in
             order to use. However, given sample input doesn't escape it, what
