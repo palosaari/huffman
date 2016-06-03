@@ -212,7 +212,7 @@ def decode(f):
                 print('bad escape detected - workaround applied')
                 val = "'\\\\' "
 
-            val = eval(val)
+            val = eval(val, {"__builtins__":None})
             table[key] = val
         elif (marker == 1):
             data = line
