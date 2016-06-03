@@ -5,6 +5,7 @@ import sys
 import re
 import argparse
 import time
+import ast
 
 
 # 521144A, ADS, University of Oulu, Finland.
@@ -212,7 +213,7 @@ def decode(f):
                 print('bad escape detected - workaround applied')
                 val = "'\\\\' "
 
-            val = eval(val, {"__builtins__":None})
+            val = ast.literal_eval(val)
             table[key] = val
         elif (marker == 1):
             data = line
